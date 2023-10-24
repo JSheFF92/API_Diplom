@@ -1,6 +1,5 @@
-# Проект по автоматизации тестирования API сервиса Reqres
+<h1 >Проект по автоматизации тестирования API сервиса <a href="https://reqres.in/"> Reqres</a></h1>
 <a href="https://reqres.in/"><img  src="media/screens/Reqresin.png">
-
 ## :man_student:: Содержание:
 
 - <a href="#tools"> Стек используемых технологий</a>
