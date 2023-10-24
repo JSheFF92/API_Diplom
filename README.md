@@ -37,7 +37,7 @@
 - ✓ Удаление пользователя
 
 <a id="jenkins"></a>
-## <img src="media/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/Students/job/Rest_Api_EVShev/"> Jenkins </a>
+## <img src="media/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/"> Jenkins </a>
 <p align="center">
 <a href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/"><img src="media/screens/Jenkins.png" alt="Jenkins1"/></a>
 </p>
@@ -61,7 +61,7 @@ gradle clean test
 clean test
 ```
 <a id="allureReport"></a>
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure.svg"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/Students/job/Rest_Api_EVShev/8/allure/"> Allure-отчета </a>
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure.svg"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/8/allure/"> Allure-отчета </a>
 ## ⛅: Основной отчет
 
 <p align="center">
