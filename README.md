@@ -1,5 +1,5 @@
 # Проект по автоматизации тестирования API сервиса Reqres
-<img  src="media/screens/Reqresin.png">
+<a href="https://reqres.in/"><img  src="media/screens/Reqresin.png">
 
 ## :man_student:: Содержание:
 
