@@ -37,7 +37,7 @@ public class UserTest {
 
     @Test
     @Owner("Евгений Шевчук")
-    @DisplayName("Проверка данных пользователя")
+    @DisplayName("Проверка данных пользователя в общем списке пользователей")
     void listUsersTest() {
         GetListUsersModel responseUsers = step("Получаем массив пользователей", () ->
                 given(request)
