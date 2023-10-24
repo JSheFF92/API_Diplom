@@ -2,6 +2,8 @@ package in.reqres.tests;
 
 
 import in.reqres.models.*;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static in.reqres.specs.Specs.*;
@@ -16,6 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class UserTest {
 
     @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Проверка имени фамилии и айди пользователя")
     void getFirstAndLastNameAndIdTest() {
         DataModel data = step("Получаем массив пользователя", () ->
                 given(request)
@@ -32,6 +36,8 @@ public class UserTest {
     }
 
     @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Проверка данных пользователя")
     void listUsersTest() {
         GetListUsersModel responseUsers = step("Получаем массив пользователей", () ->
                 given(request)
@@ -53,6 +59,8 @@ public class UserTest {
     }
 
     @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Создание нового пользователя")
     void createUserTest() {
         BodyUserModel body = new BodyUserModel();
         body.setName("Jenya");
@@ -76,6 +84,8 @@ public class UserTest {
     }
 
     @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Обновление данных пользователя")
     void putUserTest() {
         BodyUserModel updateBody = new BodyUserModel();
         updateBody.setName("SuperJenya");
@@ -96,6 +106,8 @@ public class UserTest {
     }
 
     @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Удаление пользователя")
     void deleteUserTest() {
         step("Проверяем статус удаления пользователя", () -> {
                 given(request)
