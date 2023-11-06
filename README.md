@@ -39,7 +39,7 @@
 <a id="jenkins"></a>
 ## <img src="media/logo/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/"> Jenkins </a>
 <p align="center">
-<a href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/"><img src="media/screens/Jenkins.png" alt="Jenkins1"/></a>
+<a href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/allure/"><img src="media/screens/Jenkins.png" alt="Jenkins1"/></a>
 </p>
 После выполнения сборки, в блоке <code>История сборок</code> напротив номера сборки появятся значки <code>Allure Report</code> и <code>Allure TestOps</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовой документацией соответственно.
 
@@ -51,15 +51,12 @@
 
 <a id="console"></a>
 ## :rocket:: Запуск тестов из терминала
-Локальный запуск:
+Команда запуска тестов:
 ```
 gradle clean test
 ```
 
-Удаленный запуск:
-```
-clean test
-```
+
 <a id="allureReport"></a>
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure.svg"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/Rest_Api_EVShev/8/allure/"> Allure-отчета </a>
 ## ⛅: Основной отчет

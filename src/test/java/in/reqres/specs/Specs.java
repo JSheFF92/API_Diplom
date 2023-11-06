@@ -20,7 +20,7 @@ public class Specs {
             .log().method()
             .log().body()
             .contentType(JSON)
-            .baseUri(config.BaseUrl())
+            .baseUri(config.BaseUri())
             .basePath(config.BasePath());
 
     public static ResponseSpecification responseSpecWithStatusCode200 = new ResponseSpecBuilder()

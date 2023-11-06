@@ -6,14 +6,12 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static in.reqres.specs.Specs.*;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserTest {
 
@@ -29,9 +27,9 @@ public class UserTest {
                         .extract().as(DataModel.class));
 
         step("Проверяем Id, First Name, Last Name", () -> {
-            assertEquals(2, data.getUser().getId());
-            assertEquals("Janet", data.getUser().getFirstName());
-            assertEquals("Weaver", data.getUser().getLastName());
+            assertThat(2).isEqualTo(data.getUser().getId());
+            assertThat("Janet").isEqualTo(data.getUser().getFirstName());
+            assertThat("Weaver").isEqualTo(data.getUser().getLastName());
         });
     }
 
@@ -48,12 +46,12 @@ public class UserTest {
 
         step("Проверяем данные в массиве", () -> {
             List<ListUsersDataResponseModel> data = responseUsers.getData();
-            assertEquals("Byron", data.get(3).getFirstName());
-            assertEquals("Fields", data.get(3).getLastName());
-            assertEquals(9, responseUsers.getData().get(2).getId());
-            assertEquals("To keep ReqRes free, contributions towards server costs are appreciated!",
-                    responseUsers.getSupport().getText());
-            assertEquals(6, responseUsers.getPerPage());
+            assertThat("Byron").isEqualTo(data.get(3).getFirstName());
+            assertThat("Fields").isEqualTo(data.get(3).getLastName());
+            assertThat(9).isEqualTo(responseUsers.getData().get(2).getId());
+            assertThat("To keep ReqRes free, contributions towards server costs are appreciated!")
+                    .isEqualTo(responseUsers.getSupport().getText());
+            assertThat(6).isEqualTo(responseUsers.getPerPage());
         });
 
     }
@@ -76,10 +74,10 @@ public class UserTest {
                         .extract().as(CreateResponseModel.class));
 
         step("Проверяем созданного пользователя с заданными параметрами", () -> {
-            assertEquals("Jenya", responseNewUser.getName());
-            assertEquals("QA", responseNewUser.getJob());
-            assertNotNull(responseNewUser.getId());
-            assertNotNull(responseNewUser.getCreatedAt());
+            assertThat("Jenya").isEqualTo(responseNewUser.getName());
+            assertThat("QA").isEqualTo(responseNewUser.getJob());
+            assertThat(responseNewUser.getId()).isNotNull();
+            assertThat(responseNewUser.getCreatedAt()).isNotNull();
         });
     }
 
@@ -99,9 +97,9 @@ public class UserTest {
                         .extract().as(PutResponseUserModel.class));
 
         step("Проверяем изменения", () -> {
-            assertEquals("SuperJenya", responseUpdateUser.getName());
-            assertEquals("MEGAULTRAQA", responseUpdateUser.getJob());
-            assertNotNull(responseUpdateUser.getUpdatedAt());
+            assertThat("SuperJenya").isEqualTo(responseUpdateUser.getName());
+            assertThat("MEGAULTRAQA").isEqualTo(responseUpdateUser.getJob());
+            assertThat(responseUpdateUser.getUpdatedAt()).isNotNull();
         });
     }
 
