@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ListUsersDataResponseModel {
     int id;
     String email;
@@ -12,6 +13,4 @@ public class ListUsersDataResponseModel {
     String firstName;
     @JsonProperty("last_name")
     String lastName;
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    String avatar;
 }
