@@ -9,6 +9,11 @@ import lombok.Data;
 public class ListUsersDataResponseModel {
     int id;
     String email;
+    String avatar;
+    int year;
+    String color;
+    @JsonProperty("pantone_value")
+    String pantone;
     @JsonProperty("first_name")
     String firstName;
     @JsonProperty("last_name")
