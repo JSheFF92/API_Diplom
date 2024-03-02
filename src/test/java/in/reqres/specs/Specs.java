@@ -34,8 +34,14 @@ public class Specs {
             .log(BODY)
             .expectStatusCode(201)
             .build();
+
     public static ResponseSpecification responseSpecWithStatusCode204 = new ResponseSpecBuilder()
             .expectStatusCode(204)
+            .log(STATUS)
+            .build();
+
+    public static ResponseSpecification responseSpecWithStatusCode400 = new ResponseSpecBuilder()
+            .expectStatusCode(400)
             .log(STATUS)
             .build();
 }

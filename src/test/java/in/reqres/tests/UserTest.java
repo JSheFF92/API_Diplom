@@ -3,7 +3,6 @@ package in.reqres.tests;
 
 import in.reqres.models.*;
 import io.qameta.allure.Owner;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -103,6 +102,27 @@ public class UserTest {
             assertThat("QA").isEqualTo(responseNewUser.getJob());
             assertThat(responseNewUser.getId()).isNotNull();
             assertThat(responseNewUser.getCreatedAt()).isNotNull();
+        });
+    }
+
+    @Test
+    @Owner("Евгений Шевчук")
+    @DisplayName("Неуспешное создание нового пользователя, без пароля")
+    void createUnSuccessfulUserTest() {
+        BodyUnSuccessfulUserModel body = new BodyUnSuccessfulUserModel();
+        body.setEmail("sydney@fife");
+
+        CreateUnSuccessfulResponseModel responseNewUser = step("Создаем пользователя с заданными Name и Job", () ->
+                given(request)
+                        .body(body)
+                        .when()
+                        .post("/register")
+                        .then()
+                        .spec(responseSpecWithStatusCode400)
+                        .extract().as(CreateUnSuccessfulResponseModel.class));
+
+        step("Проверяем созданного пользователя с заданными параметрами", () -> {
+            assertThat("Missing password").isEqualTo(responseNewUser.getError());
         });
     }
 
